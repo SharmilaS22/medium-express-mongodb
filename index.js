@@ -35,7 +35,12 @@ const stud = new Student({
     subjects: ['DBMS', 'OS', 'Graph Theory', 'Internet Programming']
 });
 // Add the document to Collections
-stud.save().then(() => console.log("One entry added"));
+stud.save().then(() => console.log("One entry added"), (err) => console.log(err));
+// Save method can also be written as:
+// stud.save((err, result) => {
+//     if(err) console.log(err);
+//     else console.log("entry added");
+// });
 
 // get documents
 app.get('/', (req, res) => {
