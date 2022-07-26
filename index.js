@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
             console.log(err);
             res.send("Some error occured!")
         } 
-    });
+    }).catch(err => console.log("Error occured, " + err));
 });
 
 // Server listen
